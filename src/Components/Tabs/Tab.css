@@ -13,3 +13,14 @@
 .tab ul :nth-child(1){
   margin-right: auto;
 }
+
+.tab input{
+  height: 24px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-block: 3px;
+  padding-left: 3px;
+  
+}
+
+

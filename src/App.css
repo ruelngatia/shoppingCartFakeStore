@@ -10,8 +10,20 @@
 
 .contents .categories{
     width: 15%;
+    
 }
 
 .contents .list-items{
     width: 85%;
+    z-index: -1;
+}
+
+@media screen and (max-width:768px) {
+
+    .categories .categories{
+        
+    }
+    .categories .list-items{
+        width: 98%;
+    }
 }

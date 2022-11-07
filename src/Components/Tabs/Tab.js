@@ -19,17 +19,17 @@ export default function Tab(props){
         <div className="tab">
             <ul>
                 <li>{props.categoryName}</li>
-                <input type={'text'} 
+                <input placeholder="Search product here" type={'text'} 
                     onChange={(value)=>{
                         props.searchProduct(value.target.value)
                     }}
                 />
-                <li><MdOutlineSearch size={16} color='#BDBDBD'/></li>
+                <li><MdOutlineSearch size={20} color='#BDBDBD'/></li>
                 <li onClick={()=>{
                         setSortOrder(!sortDesc);
                         props.sortProducts(sortDesc?'desc':'asc');
                     }
-                    }>{sortDesc?<FaSortAmountDown size={16} color='#BDBDBD'/>:<FaSortAmountUp size={16} color='#BDBDBD'/>}</li>
+                    }>{sortDesc?<FaSortAmountDown size={14} color='#BDBDBD'/>:<FaSortAmountUp size={14} color='#BDBDBD'/>}</li>
                 <li>
                     <select onChange={(el)=>props.limitProductList(el.target.value)}>
                         <option>All</option>

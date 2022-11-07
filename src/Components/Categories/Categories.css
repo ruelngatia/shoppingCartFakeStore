@@ -1,13 +1,19 @@
 .categories{
     width: 20%;
     padding-left: 10px;
+    position: relative;
 }
 
 .categories ul{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 30px;
     list-style: none;
+}
+
+.categories .menu{
+    display: none;
 }
 
 .categories ul li{
@@ -18,6 +24,31 @@
 
 .categories ul li:hover{
     color: #5a5a5a;
-    
+    font-weight: 600;
+}
+
+@media screen and (max-width:768px){
+
+    .categories .menu{
+        display: block;
+    }
+
+    .categories ul{
+       display: none;
+       margin-bottom: 10px;
+    }
+
+    .categories .hide-unhide{
+        display: block;
+        width: 300px;
+        background-color: white;
+        padding-block: px;
+    }
+
+    .categories ul li{
+        padding-block: 5px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid gray;
+    }
 }
 
