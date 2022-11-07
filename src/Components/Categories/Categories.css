@@ -1,0 +1,23 @@
+.categories{
+    width: 20%;
+    padding-left: 10px;
+}
+
+.categories ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+}
+
+.categories ul li{
+    font-size: 14px;
+    color: #BDBDBD;
+    transition: .8s;
+}
+
+.categories ul li:hover{
+    color: #5a5a5a;
+    
+}
+

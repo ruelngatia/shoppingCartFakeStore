@@ -1,0 +1,28 @@
+nav{
+    height: 40px;
+    margin-bottom: 20px;
+}
+nav ul{
+    padding-inline: 10px;
+    height: 100%;
+    display:  flex;
+    flex-grow: 1;
+    gap: 10px;
+    list-style: none;
+    font-size: 16px;
+    align-items: center;
+}
+nav ul li:nth-child(2){
+    margin-left: auto;
+}
+nav ul li:nth-child(6){
+    margin-left: 30px;
+}
+
+nav ul li:hover{
+    text-decoration: underline;
+}
+
+.nav ul li .links{
+    border: 2px solid red;
+}

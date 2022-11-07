@@ -1,0 +1,15 @@
+.tab{
+  padding-right: 10px;
+}
+.tab ul{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.tab ul li{
+    list-style: none;
+}
+
+.tab ul :nth-child(1){
+  margin-right: auto;
+}
