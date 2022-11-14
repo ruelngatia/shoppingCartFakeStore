@@ -7,9 +7,9 @@ export default function Nav() {
     <div>
         <nav>
             <ul>
-                <li><Link to={'/shopping'} >Store</Link></li>
+                <li><Link to={'/'} >Store</Link></li>
                 <li>About</li>
-                <li><Link to={'/shopping'}>Shop</Link></li>
+                <li><Link to={'/'}>Shop</Link></li>
                 <li>Team</li>
                 <li>Contact</li>
                 <li><Link to={'/addingProducts'}>Add</Link></li>

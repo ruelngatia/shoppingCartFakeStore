@@ -1,4 +1,5 @@
 import React from "react"; 
+import { Link, Navigate, Route ,useNavigate} from "react-router-dom";
 import './AddingProducts.css' 
 
 export default function AddingProducts(props){
@@ -11,19 +12,21 @@ export default function AddingProducts(props){
     function formValidator(){
         
        
-        if(title == '' || title == null){
-            alert('input missing value title')
-        }
-        if(description == '' || title == null){
-            alert('input missing value')
-        }
-        if(price == '' || title == null){
-            alert('input missing value')
-        }
-        if(category == '' || title == null){
-            alert('input missing value')
-        }
+        // if(title === '' || title == null){
+        //     alert('input missing value title')
+        // }
+        // if(description === '' || title == null){
+        //     alert('2')
+        // }
+        // if(price ==='' || title == null){
+        //     alert('3')
+        // }
+        // if(category ==='' || title == null){
+        //     alert('3')
+        // }
     }
+
+    const navigate = useNavigate()
 
     return(
         <div className="adding-products">
@@ -73,7 +76,8 @@ export default function AddingProducts(props){
                     category: category.value
                 }
                 props.addProductFunction(product)
-
+                navigate('/')
+                
             }}>Add element</button>
             <br/>
 

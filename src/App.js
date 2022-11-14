@@ -3,7 +3,7 @@ import './App.css'
 import ListItems from './Components/List_items/listItems';
 import Nav from './Components/Nav/Nav';
 import AddingProducts from './Components/AddingProduct/AddProducts';
-import {json, Route, Routes} from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -27,12 +27,18 @@ const getAllItems=()=>{
   
 
   function getCategory(category) {
+
+    if(category == 'All'){
+      getAllItems()
+      return
+    }
     setCategory(category)
     fetch('https://fakestoreapi.com/products/category/'.concat(category))
     .then(res=>res.json())
     .then(json=>setItems(json))
   }
-console.log(categoryName);
+
+
   function sortProducts(ord){
     fetch('https://fakestoreapi.com/products?sort='.concat(ord))
     .then(res=>res.json())
@@ -40,7 +46,7 @@ console.log(categoryName);
   }
 
   function getSingleProduct(index){
-    if(index == ''){
+    if(index === ''){
       getAllItems()
       return
     }
@@ -69,7 +75,7 @@ console.log(categoryName);
   }
 
   function limitProductList(limit){
-    if(limit == 'All'){
+    if(limit === 'All'){
       getAllItems()
     }
     fetch('https://fakestoreapi.com/products?limit='.concat(limit))
@@ -98,7 +104,11 @@ console.log(categoryName);
         </div>
         <div className='list-items'>
           <Routes>
-            <Route path='/shopping' element={<ListItems limitProductList={limitProductList} deleteItem={deleteItem} searchProduct={getSingleProduct} sortProducts={sortProducts} categoryName={categoryName} itemsList= {items}/>}/>
+            <Route path='/' element={<ListItems limitProductList={limitProductList} deleteItem={deleteItem} searchProduct={getSingleProduct} sortProducts={sortProducts} categoryName={categoryName} itemsList= {items}/>}/>
+            <Route path='/electronics' element={<ListItems limitProductList={limitProductList} deleteItem={deleteItem} searchProduct={getSingleProduct} sortProducts={sortProducts} categoryName={categoryName} itemsList= {items}/>}/>
+            <Route path='/jewelery' element={<ListItems limitProductList={limitProductList} deleteItem={deleteItem} searchProduct={getSingleProduct} sortProducts={sortProducts} categoryName={categoryName} itemsList= {items}/>}/>
+            <Route path='/men clothing' element={<ListItems limitProductList={limitProductList} deleteItem={deleteItem} searchProduct={getSingleProduct} sortProducts={sortProducts} categoryName={categoryName} itemsList= {items}/>}/>
+            <Route path='/womenclothing' element={<ListItems limitProductList={limitProductList} deleteItem={deleteItem} searchProduct={getSingleProduct} sortProducts={sortProducts} categoryName={categoryName} itemsList= {items}/>}/>
             <Route path='/addingProducts' element={<AddingProducts addProductFunction={addProduct}/>}/>
           </Routes>
         </div>
